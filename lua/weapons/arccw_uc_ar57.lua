@@ -1,7 +1,7 @@
 SWEP.Base = "arccw_base"
 SWEP.Spawnable = true
 SWEP.Category = "ArcCW - Urban Coalition"
-SWEP.UC_CategoryPack = "1Urban Decay"
+SWEP.UC_CategoryPack = "5Urban One-offs"
 SWEP.AdminOnly = false
 SWEP.UseHands = true
 
@@ -161,7 +161,7 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-2.815, 0, 1.3),
+     Pos = Vector(-2.815, 0, 0.3),
      Ang = Angle(0, 0, 4.9),
      Magnification = 1.1,
      SwitchToSound = "",
@@ -180,7 +180,7 @@ SWEP.BarrelOffsetHip = Vector(2, 0, -5)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-8.1, 4, -6.5),
+    pos        =    Vector(-5.5, 4, -5.5),
     ang        =    Angle(-6, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
     --scale = .85
@@ -430,7 +430,7 @@ SWEP.Attachments = {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         InstalledEles = {"upper_flat"},
-        Slot = {"optic","optic_sniper","ud_m16_rs"},
+        Slot = {"optic","optic_sniper"},
         Bone = "weapon",
         Offset = {
             vpos = Vector(0, -2.3, -2.2),
@@ -438,17 +438,17 @@ SWEP.Attachments = {
         },
         
     },
-    {
-        PrintName = "Barrel",
-        DefaultAttName = "20\" Standard Barrel",
-        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_barrel_20.png", "smooth mips"),
-        Slot = "ud_m16_blen",
-        Bone = "weapon",
-        Offset = {
-            vpos = Vector(2.8, -4.2, -11.5),
-            vang = Angle(90, 0, -90),
-        },
-    },
+    -- {
+    --     PrintName = "Barrel",
+    --     DefaultAttName = "20\" Standard Barrel",
+    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_barrel_20.png", "smooth mips"),
+    --     Slot = "ud_m16_blen",
+    --     Bone = "weapon",
+    --     Offset = {
+    --         vpos = Vector(2.8, -4.2, -11.5),
+    --         vang = Angle(90, 0, -90),
+    --     },
+    -- },
     -- {
     --     PrintName = "Handguard",
     --     DefaultAttName = "Ribbed Handguard",
@@ -464,7 +464,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Slot = {"muzzle", "ud_m16_muzzle"},
+        Slot = {"muzzle"},
         Bone = "weapon",
         VMScale = Vector(1, 1, 1),
         WMScale = VMScale,
@@ -525,27 +525,27 @@ SWEP.Attachments = {
         GivesFlags = {"tac"},
         --InstalledEles = {"ud_m16_clamp_fullsize"}
     },
-    {
-        PrintName = "Grip Type",
-        Slot = {"ud_m16_grip"},
-        DefaultAttName = "Standard Grip",
-        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_grip_default.png", "smooth mips"),
-        ExcludeFlags = {"m16_adar"}
-    },
-    {
-        PrintName = "Stock",
-        Slot = {"ud_m16_stock","go_stock"},
-        DefaultAttName = "Full Stock",
-        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_stock_default.png", "smooth mips"),
-        -- GSO support
-        InstalledEles = {"stock_231_tube"},
-        Bone = "weapon",
-        Offset = {
-            vpos = Vector(-0.02, 0, -3.25),
-            vang = Angle(90, 0, -90),
-        },
-        VMScale = Vector(1.16, 1.16, 1.16),
-    },
+    -- {
+    --     PrintName = "Grip Type",
+    --     Slot = {"ud_m16_grip"},
+    --     DefaultAttName = "Standard Grip",
+    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_grip_default.png", "smooth mips"),
+    --     ExcludeFlags = {"m16_adar"}
+    -- },
+    -- {
+    --     PrintName = "Stock",
+    --     Slot = {"ud_m16_stock","go_stock"},
+    --     DefaultAttName = "Full Stock",
+    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_stock_default.png", "smooth mips"),
+    --     -- GSO support
+    --     InstalledEles = {"stock_231_tube"},
+    --     Bone = "weapon",
+    --     Offset = {
+    --         vpos = Vector(-0.02, 0, -3.25),
+    --         vang = Angle(90, 0, -90),
+    --     },
+    --     VMScale = Vector(1.16, 1.16, 1.16),
+    -- },
     -- {
     --     PrintName = "Magazine",
     --     Slot = {"ud_m16_mag"},
