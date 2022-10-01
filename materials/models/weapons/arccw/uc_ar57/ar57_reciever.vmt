@@ -4,7 +4,7 @@
 {
 	"$basetexture" "models/weapons/arccw/uc_ar57/PLACEHOLDER_rec"
 	"$bumpmap" "models/weapons/arccw/uc_ar57/ar57_reciever_n"
-	"$phongexponenttexture" "models/weapons/arccw/uc_ar57/ar57_reciever_m"
+	"$phongexponenttexture" "models/weapons/arccw/uc_ar57/ar57_reciever_r"
 	"$phongwarptexture"			"models\weapons\arccw\ud_stalol\phongwarp_metal"
 
 	"$blendtintbybasealpha" "1"
