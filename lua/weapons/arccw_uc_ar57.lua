@@ -268,10 +268,8 @@ SWEP.Animations = {
         Source = "ready",
         Time = 77 / 37,
         LHIK = true,
-        LHIKIn = 0.3,
-        LHIKEaseIn = 0.4,
-        LHIKEaseOut = 0.15,
-        LHIKOut = 0.4,
+        LHIKIn = 0,
+        LHIKOut = 3,
         SoundTable = {
             {s = common .. "raise.ogg", t = 0},
             {s = common .. "rattle.ogg", t = 0.2},
@@ -297,10 +295,10 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         LHIK = true,
-        LHIKIn = 0.3,
-        LHIKEaseIn = 0.4,
+        LHIKIn = 0.5,
+        -- LHIKEaseIn = 0.4,
         LHIKEaseOut = 0.15,
-        LHIKOut = 0.4,
+        LHIKOut = 0,
         SoundTable = {
             {s = ratel, t = 0},
             {s = common .. "cloth_6.ogg", t = 0.2},
@@ -335,7 +333,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 135 / 37,
+        Time = 135 / 37 * 0.9,
         MinProgress = 1.5,
         LastClip1OutTime = 0.9,
         LHIK = true,
@@ -361,7 +359,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 164 / 37,
+        Time = 164 / 37 * 0.9,
         MinProgress = 2,
         LastClip1OutTime = 0.7,
         LHIK = true,
