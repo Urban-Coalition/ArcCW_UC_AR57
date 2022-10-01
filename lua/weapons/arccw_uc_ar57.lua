@@ -296,6 +296,16 @@ SWEP.AttachmentElements = {
     ["stock_ru556"] = {
         VMBodygroups = {{ind = 0, bg = 11}},
     },
+
+    ["grip_ergo"] = {
+        VMBodygroups = {{ind = 1, bg = 1}},
+    },
+    ["grip_skel"] = {
+        VMBodygroups = {{ind = 1, bg = 2}},
+    },
+    ["grip_wood"] = {
+        VMBodygroups = {{ind = 1, bg = 3}},
+    },
 }
 
 -- Animations --
