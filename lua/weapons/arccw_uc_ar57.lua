@@ -53,8 +53,8 @@ end
 
 -- Viewmodel / Worldmodel / FOV --
 
-SWEP.ViewModel = "models/weapons/arccw/c_ud_m16.mdl"
-SWEP.WorldModel = "models/weapons/arccw/c_ud_m16.mdl"
+SWEP.ViewModel = "models/weapons/arccw/c_uc_ar57.mdl"
+SWEP.WorldModel = "models/weapons/arccw/c_uc_ar57.mdl"
 SWEP.ViewModelFOV = 80
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
@@ -162,13 +162,13 @@ SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
      Pos = Vector(-2.815, 0, 1.3),
-     Ang = Angle(0, 0, 0),
+     Ang = Angle(0, 0, 4.9),
      Magnification = 1.1,
      SwitchToSound = "",
 }
 
-SWEP.ActivePos = Vector(0.33, -2, 1.33)
-SWEP.ActiveAng = Angle(0, 0, -3)
+SWEP.ActivePos = Vector(-0.2, -1, 0.1)
+SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CustomizePos = Vector(5, -2, -2)
 SWEP.CustomizeAng = Angle(15, 25, 0)
@@ -246,9 +246,9 @@ SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
 
 -- Bodygroups --
 
-SWEP.BulletBones = {
-    [2] = "m16_bullets1",    [3] = "m16_bullets2"
-}
+-- SWEP.BulletBones = {
+--     [2] = "m16_bullets1",    [3] = "m16_bullets2"
+-- }
 
 SWEP.DefaultBodygroups = "00000000000000000000000"
 
@@ -265,8 +265,8 @@ local ratel = {common .. "rattle1.ogg", common .. "rattle2.ogg", common .. "ratt
 
 SWEP.Animations = {
     ["ready"] = {
-        Source = "fix",
-        Time = 45 / 30,
+        Source = "ready",
+        Time = 77 / 37,
         LHIK = true,
         LHIKIn = 0.3,
         LHIKEaseIn = 0.4,
@@ -284,9 +284,7 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    ["idle_empty"] = {
-        Source = "idle_empty",
-    },
+    
     ["draw"] = {
         Source = "draw",
         SoundTable = {
@@ -295,15 +293,7 @@ SWEP.Animations = {
             {s = ratel, t = 0.2},
         },
     },
-    ["draw_empty"] = {
-        Source = "draw_empty",
-        Time = 20 / 30,
-        SoundTable = {
-            {s = common .. "raise.ogg", t = 0},
-            {s = common .. "shoulder.ogg", t = 0.15},
-            {s = ratel, t = 0.2},
-        },
-    },
+    
     ["holster"] = {
         Source = "holster",
         LHIK = true,
@@ -316,60 +306,12 @@ SWEP.Animations = {
             {s = common .. "cloth_6.ogg", t = 0.2},
         },
     },
-    ["holster_empty"] = {
-        Source = "holster_empty",
-        Time = 20 / 30,
-        LHIK = true,
-        LHIKIn = 0.3,
-        LHIKEaseIn = 0.4,
-        LHIKEaseOut = 0.15,
-        LHIKOut = 0.4,
-        SoundTable = {
-            {s = ratel, t = 0},
-            {s = common .. "cloth_6.ogg", t = 0.2},
-        },
-    },
-    ["trigger"] = {
-        Source = "idle",
-        MinProgress = .1,
-        SoundTable = {
-            {s = ")^weapons/arccw_ud/uzi/prefire.ogg",         t = 0, c = ci},
-        },
-    },
+    
     ["fire"] = {
         Source = "fire",
-        Time = 13 / 30,
+        Time = 15 / 37,
         ShellEjectAt = 0.01,
         SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0 }},
-    },
-    ["fire_empty"] = {
-        Source = "fire_empty",
-        Time = 13 / 30,
-        ShellEjectAt = 0.01,
-        SoundTable = {
-            {s = path .. "mech_last.ogg", t = 0}, -- Temporary
-        },
-    },
-
-    ["fire_cycle"] = {
-        Source = "fire",
-        Time = 13 / 30,
-    },
-
-    ["cycle"] = {
-        Source = "fix",
-        Time = 36 / 30 * 0.7,
-        ShellEjectAt = 0.3,
-        LHIK = true,
-        LHIKIn = 0.3 * 0.7,
-        LHIKEaseIn = 0.4 * 0.7,
-        LHIKEaseOut = 0.15 * 0.7,
-        LHIKOut = 0.4 * 0.7,
-        SoundTable = {
-            {s = path .. "chback.ogg",   t = 0.05},
-            {s = common .. "cloth_4.ogg",  t = 0.2},
-            {s = path .. "chamber.ogg",  t = 0.3},
-        },
     },
 
     ["fix"] = {
@@ -387,28 +329,13 @@ SWEP.Animations = {
             {s = path .. "chamber.ogg",  t = 0.5},
         },
     },
-    ["fix_empty"] = {
-        Source = "fix_empty",
-        Time = 45 / 30,
-        ShellEjectAt = false,
-        LHIK = true,
-        LHIKIn = 0.3,
-        LHIKEaseIn = 0.4,
-        LHIKEaseOut = 0.15,
-        LHIKOut = 0.4,
-        SoundTable = {
-            {s = path .. "chback.ogg",   t = 0.15},
-            {s = common .. "cloth_4.ogg",  t = 0.5},
-            {s = path .. "ch_forward_empty.ogg",  t = 0.5},
-        },
-    },
 
     -- 30 Round Reloads --
 
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 71 / 30,
+        Time = 135 / 37,
         MinProgress = 1.5,
         LastClip1OutTime = 0.9,
         LHIK = true,
@@ -434,7 +361,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 87 / 30,
+        Time = 166 / 37,
         MinProgress = 2,
         LastClip1OutTime = 0.7,
         LHIK = true,
@@ -461,274 +388,40 @@ SWEP.Animations = {
         },
     },
 
-    -- 20 Round Reloads --
 
-    ["reload_20"] = {
-        Source = "reload_20",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 71 / 30,
-        MinProgress = 1.5,
-        LastClip1OutTime = 0.9,
+    ["enter_inspect"] = {
+        Source = "inspect_enter",
+        -- time = 35 / 60,
         LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.4,
-        LHIKOut = 0.7,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
         SoundTable = {
-            {s = rottle,  t = 0.0},
-            {s = ratel, t = 0.05},
-            {s = path .. "magout_empty.ogg", 	 t = 0.09},
-            {s = common .. "magpouch_gear.ogg", t = 0.1},
-            {s = rottle,  t = 0.75},
-            {s = ratel, t = 0.85},
-            {s = path .. "struggle.ogg",    t = 0.9, v = 0.4},
-            {s = path .. "magin.ogg",    t = 0.95},
-            {s = rottle,  t = 1.1},
-            {s = ratel, t = 1.125},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 1.65},
-            {s = common .. "grab-polymer.ogg", t = 1.7, v = 0.25},
-            {s = common .. "shoulder.ogg", t = 1.75},
         },
     },
-    ["reload_empty_20"] = {
-        Source = "reload_empty_20",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 86 / 30,
-        MinProgress = 2,
-        LastClip1OutTime = 0.7,
+    ["idle_inspect"] = {
+        Source = "inspect_loop",
+        -- time = 72 / 60,
         LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
+        LHIKIn = 0,
+        LHIKOut = 0,
+    },
+    ["exit_inspect"] = {
+        Source = "inspect_exit",
+        -- time = 66 / 60,
+        LHIK = true,
+        LHIKIn = 0,
         LHIKEaseOut = 0.3,
-        LHIKOut = 0.8,
+        LHIKOut = 0.84,
         SoundTable = {
-            {s = common .. "magpouch_gear.ogg", t = 0},
-            {s = rottle, t = 0.01},
-            {s = ratel, t = 0.05},
-            {s = path .. "magout_empty.ogg", 	 t = 0.075},
-            {s = rottle, t = 0.75},
-            {s = ratel, t = 0.9},
-            {s = common .. "rifle_magdrop.ogg",  t = 0.65},
-            {s = path .. "struggle.ogg",    t = 0.8, v = 0.4},
-            {s = path .. "magin.ogg",    t = 0.85},
-            {s = rottle, t = 1.4},
-            {s = ratel, t = 1.4},
-            {s = path .. "chamber_press.ogg", t = 1.72},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 1.95},
-            {s = common .. "grab-polymer.ogg", t = 2.075, v = 0.25},
-            {s = common .. "shoulder.ogg", t = 2.13},
-        },
-    },
-
-    -- 40 Round Reloads --
-
-    ["reload_40"] = {
-        Source = "reload_40",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 71 / 30,
-        MinProgress = 1.5,
-        LastClip1OutTime = 0.9,
-        LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.4,
-        LHIKOut = 0.7,
-        SoundTable = {
-            {s = rottle, t = 0.0},
-            {s = ratel, t = 0.1},
-            {s = path .. "magout_empty.ogg", 	 t = 0.2},
-            {s = common .. "magpouch_gear.ogg", t = 0.25},
-            {s = rottle, t = 0.75},
-            {s = ratel, t = 0.8},
-            {s = path .. "struggle.ogg",    t = 0.95, v = 0.4},
-            {s = path .. "magin.ogg",    t = 1.0},
-            {s = rottle, t = 1.1},
-            {s = ratel, t = 1.25},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 1.65},
-            {s = common .. "shoulder.ogg", t = 1.75},
-        },
-    },
-    ["reload_empty_40"] = {
-        Source = "reload_empty_40",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 85 / 30,
-        MinProgress = 2,
-        LastClip1OutTime = 0.7,
-        LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.4,
-        LHIKOut = 0.8,
-        SoundTable = {
-            {s = rottle,  t = 0.0},
-            {s = path .. "magout_empty.ogg", 	 t = 0.2},
-            {s = common .. "magpouch_gear.ogg", t = 0.25},
-            {s = rottle,  t = 0.75},
-            {s = common .. "rifle_magdrop.ogg",  t = 0.8},
-            {s = path .. "struggle.ogg",    t = 1.0, v = 0.4},
-            {s = path .. "magin.ogg",    t = 1.05},
-            {s = rottle,  t = 1.475},
-            {s = ratel,  t = 1.475},
-            {s = path .. "boltdrop.ogg", t = 1.78},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 2.1},
-            {s = common .. "shoulder.ogg", t = 2.2},
-        },
-    },
-
-    -- 60 Round Reloads --
-
-    ["reload_60"] = {
-        Source = "reload_60",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 71 / 30,
-        MinProgress = 1.5,
-        LastClip1OutTime = 0.9,
-        LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.4,
-        LHIKOut = 0.7,
-        SoundTable = {
-            {s = rottle, t = 0.0},
-            {s = common .. "magpouch_gear.ogg", t = 0.2},
-            {s = path .. "magout_empty.ogg", 	 t = 0.25},
-            {s = rottle, t = 0.75},
-            {s = path .. "struggle.ogg",    t = 1.0, v = 0.4},
-            {s = path .. "magin.ogg",    t = 1.1},
-            {s = rottle, t = 1.1},
-            {s = common .. "grab-polymer.ogg", t = 1.78, v = 0.25},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 1.8},
-            {s = common .. "shoulder.ogg", t = 1.9},
-        },
-    },
-    ["reload_empty_60"] = {
-        Source = "reload_empty_60",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 85 / 30,
-        MinProgress = 2,
-        LastClip1OutTime = 0.7,
-        LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.4,
-        LHIKOut = 0.8,
-        SoundTable = {
-            {s = rottle, t = 0.0},
-            {s = common .. "magpouch_gear.ogg", t = 0.2},
-            {s = path .. "magout_empty.ogg", 	 t = 0.25},
-            {s = rottle, t = 0.75},
-            {s = common .. "rifle_magdrop.ogg",  t = 0.8},
-            {s = path .. "struggle.ogg",    t = 1.0, v = 0.4},
-            {s = path .. "magin.ogg",    t = 1.1},
-            {s = rottle, t = 1.475},
-            {s = ratel, t = 1.475},
-            {s = path .. "boltdrop.ogg", t = 1.8},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 2.1},
-            {s = common .. "grab-polymer.ogg", t = 2.15, v = 0.25},
-            {s = common .. "shoulder.ogg", t = 2.2},
-        },
-    },
-
-    -- 100 Round Reloads --
-
-    ["reload_100"] = {
-        Source = "reload_100",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 71 / 30,
-        MinProgress = 1.75,
-        LastClip1OutTime = 0.9,
-        LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.3,
-        LHIKOut = 0.5,
-        SoundTable = {
-            {s = rottle, t = 0.0},
-            {s = path .. "magout_empty.ogg", 	 t = 0.2},
-            {s = rottle, t = 0.75},
-            {s = path .. "struggle.ogg",    t = 0.95, v = 0.4},
-            {s = path .. "magin.ogg",    t = 1.05},
-            {s = rottle, t = 1.1},
-            {s = path .. "magtap.ogg",   t = 1.59},
-            {s = common .. "cloth_4.ogg",  t = 1.65},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 1.8},
-            {s = common .. "grab-polymer.ogg", t = 1.85, v = 0.25},
-            {s = common .. "shoulder.ogg", t = 2.0},
-        },
-    },
-    ["reload_empty_100"] = {
-        Source = "reload_empty_100",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 90 / 30,
-        MinProgress = 2.5,
-        LastClip1OutTime = 0.7,
-        LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.3,
-        LHIKOut = 0.6,
-        SoundTable = {
-            {s = rottle, t = 0.0},
-            {s = path .. "magout_empty.ogg", 	 t = 0.2},
-            {s = rottle, t = 0.75},
-            {s = common .. "magdrop.ogg",  t = 0.65},
-            {s = path .. "struggle.ogg",    t = 0.95, v = 0.4},
-            {s = path .. "magin.ogg",    t = 1.05},
-            {s = path .. "magtap.ogg",   t = 1.59},
-            {s = rottle, t = 1.75},
-            {s = path .. "chback.ogg",   t = 2.0},
-            {s = common .. "cloth_4.ogg",  t = 2.05},
-            {s = path .. "chamber.ogg",  t = 2.22},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 2.5},
-            {s = common .. "grab-polymer.ogg", t = 2.55, v = 0.25},
-            {s = common .. "shoulder.ogg", t = 2.6},
-        },
-    },
-
-    -- 9mm 32 Round Reloads --
-
-    ["reload_9mm"] = {
-        Source = "reload_9mm",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 70 / 30,
-        MinProgress = 1.5,
-        LastClip1OutTime = 0.9,
-        LHIK = true,
-        LHIKIn = 0.4,
-        LHIKEaseIn = 0.4,
-        LHIKEaseOut = 0.15,
-        LHIKOut = 0.5,
-        SoundTable = {
-            {s = rottle, t = 0.0},
-            {s = common .. "magpouch_gear.ogg", t = 0.15},
-            {s = "weapons/arccw_ud/uzi/" .. "magout_empty.ogg", 	 t = 16 / 30},
-            {s = rottle, t = 0.75},
-            {s = "weapons/arccw_ud/uzi/" .. "magin.ogg",    t = 27 / 30},
-            {s = rottle, t = 1.1},
-            {s = common .. "magpouchin.ogg", t = 1.55},
-            {s = common .. "shoulder.ogg", t = 1.93},
-        },
-    },
-    ["reload_empty_9mm"] = {
-        Source = "reload_empty_9mm",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 80 / 30,
-        MinProgress = 2,
-        LastClip1OutTime = 0.7,
-        LHIK = true,
-        LHIKIn = 0.1,
-        LHIKEaseIn = 0.1,
-        LHIKEaseOut = 0.4,
-        LHIKOut = 0.9,
-        SoundTable = {
-            {s = rottle, t = 0.0},
-            {s = "weapons/arccw_ud/uzi/" .. "magout_empty.ogg", 	 t = 0.1},
-            {s = common .. "magpouch_gear.ogg", t = 0.65},
-            {s = rottle, t = 0.75},
-            {s = "weapons/arccw_ud/uzi/" .. "magin.ogg",    t = 0.8},
-            {s = path .. "chamber_press.ogg", t = 1.7},
-            {s = rottle, t = 1.39},
-            {s = common .. "shoulder.ogg", t = 2.15},
+            -- { s = rottle, t = 0 / 60, c = ca },
+            -- { s = common .. "magrelease.ogg", t = 7 / 60, c = ca },
+            -- { s = path .. "magout.ogg", t = 8 / 60, c = ca },
+            -- { s = rottle, t = 100 / 60, c = ca },
+            -- { s = path .. "magin_miss.ogg", t = 106 / 60, c = ca },
+            -- { s = path .. "magin_old.ogg", t = 114 / 60, c = ca },
+            -- { s = path .. "rack1.ogg", t = 155 / 60, c = ca },
+            -- { s = rottle, t = 160 / 60, c = ca },
+            -- { s = path .. "rack2.ogg", t = 178 / 60, c = ca },
         },
     },
 }
@@ -740,7 +433,7 @@ SWEP.Attachments = {
         DefaultAttName = "Iron Sights",
         InstalledEles = {"upper_flat"},
         Slot = {"optic","optic_sniper","ud_m16_rs"},
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(0, -1.75, 3),
             vang = Angle(90, 0, -90),
@@ -755,29 +448,29 @@ SWEP.Attachments = {
         DefaultAttName = "20\" Standard Barrel",
         DefaultAttIcon = Material("entities/att/acwatt_ud_m16_barrel_20.png", "smooth mips"),
         Slot = "ud_m16_blen",
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(2.8, -4.2, -11.5),
             vang = Angle(90, 0, -90),
         },
     },
-    {
-        PrintName = "Handguard",
-        DefaultAttName = "Ribbed Handguard",
-        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_hg_ribbed.png", "smooth mips"),
-        Slot = "ud_m16_hg",
-        Bone = "m16_parent",
-        Offset = {
-            vpos = Vector(0, -1.63, -0.41),
-            vang = Angle(90, 0, -90),
-        },
-        ExcludeFlags = {"sd"}
-    },
+    -- {
+    --     PrintName = "Handguard",
+    --     DefaultAttName = "Ribbed Handguard",
+    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_hg_ribbed.png", "smooth mips"),
+    --     Slot = "ud_m16_hg",
+    --     Bone = "weapon",
+    --     Offset = {
+    --         vpos = Vector(0, -1.63, -0.41),
+    --         vang = Angle(90, 0, -90),
+    --     },
+    --     ExcludeFlags = {"sd"}
+    -- },
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Slot = {"muzzle", "ud_m16_muzzle"},
-        Bone = "m16_parent",
+        Bone = "weapon",
         VMScale = Vector(1, 1, 1),
         WMScale = VMScale,
         Offset = {
@@ -786,34 +479,34 @@ SWEP.Attachments = {
         },
         ExcludeFlags = {"sd", "m16_stub"},
     },
-    {
-        PrintName = "Upper Receiver",
-        DefaultAttName = "5.56x45mm Upper",
-        DefaultAttIcon = Material("entities/att/uc_bullets/556x45.png", "smooth mips"),
-        Slot = {"ud_m16_receiver"},
-        Bone = "m16_parent",
-        Offset = {
-            vpos = Vector(2.8, -4.2, -11.5),
-            vang = Angle(90, 0, -90),
-        },
-        ExcludeFlags = {"ud_m16_fpw"}
-    },
-    {
-        PrintName = "Lower Receiver",
-        DefaultAttName = "Burst Lower",
-        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_receiver_default.png", "smooth mips"),
-        Slot = {"ud_m16_fcg"},
-        Bone = "m16_parent",
-        Offset = {
-            vpos = Vector(2.8, -4.2, -11.5),
-            vang = Angle(90, 0, -90),
-        },
-        ExcludeFlags = {"m16_nolower"}
-    },
+    -- {
+    --     PrintName = "Upper Receiver",
+    --     DefaultAttName = "5.56x45mm Upper",
+    --     DefaultAttIcon = Material("entities/att/uc_bullets/556x45.png", "smooth mips"),
+    --     Slot = {"ud_m16_receiver"},
+    --     Bone = "weapon",
+    --     Offset = {
+    --         vpos = Vector(2.8, -4.2, -11.5),
+    --         vang = Angle(90, 0, -90),
+    --     },
+    --     ExcludeFlags = {"ud_m16_fpw"}
+    -- },
+    -- {
+    --     PrintName = "Lower Receiver",
+    --     DefaultAttName = "Burst Lower",
+    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_receiver_default.png", "smooth mips"),
+    --     Slot = {"ud_m16_fcg"},
+    --     Bone = "weapon",
+    --     Offset = {
+    --         vpos = Vector(2.8, -4.2, -11.5),
+    --         vang = Angle(90, 0, -90),
+    --     },
+    --     ExcludeFlags = {"m16_nolower"}
+    -- },
     {
         PrintName = "Underbarrel",
         Slot = "foregrip",
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(0, 6, 11),
             vang = Angle(90, 0, -90),
@@ -829,7 +522,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         Slot = {"tac"},
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(0, 0.3, 21.25),
             vang = Angle(90, 0, -90),
@@ -851,19 +544,19 @@ SWEP.Attachments = {
         DefaultAttIcon = Material("entities/att/acwatt_ud_m16_stock_default.png", "smooth mips"),
         -- GSO support
         InstalledEles = {"stock_231_tube"},
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(-0.02, 0, -3.25),
             vang = Angle(90, 0, -90),
         },
         VMScale = Vector(1.16, 1.16, 1.16),
     },
-    {
-        PrintName = "Magazine",
-        Slot = {"ud_m16_mag"},
-        DefaultAttName = "30-Round Mag",
-        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_mag_30.png", "smooth mips"),
-    },
+    -- {
+    --     PrintName = "Magazine",
+    --     Slot = {"ud_m16_mag"},
+    --     DefaultAttName = "30-Round Mag",
+    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_mag_30.png", "smooth mips"),
+    -- },
     {
         PrintName = "Ammo Type",
         DefaultAttName = "\"FMJ\" Full Metal Jacket",
@@ -889,7 +582,7 @@ SWEP.Attachments = {
         PrintName = "Front Sight",
         Slot = {"ud_m16_fs", "ud_m16_charm"},
         FreeSlot = true,
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(0, -1.65, 16.75), -- 21.75 or 15.75
             vang = Angle(90, 0, -90),
@@ -900,7 +593,7 @@ SWEP.Attachments = {
         PrintName = "Charm",
         Slot = {"charm", "fml_charm"}, -- "ud_m16_charm"
         FreeSlot = true,
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(0.48, 0.5, 3.9),
             vang = Angle(90, 0, -90),
@@ -910,7 +603,7 @@ SWEP.Attachments = {
     {
         PrintName = "M203 slot",
         Slot = "uc_ubgl",
-        Bone = "m16_parent",
+        Bone = "weapon",
         Offset = {
             vpos = Vector(0, -0.4, 7.2),
             vang = Angle(90, 0, -90),
