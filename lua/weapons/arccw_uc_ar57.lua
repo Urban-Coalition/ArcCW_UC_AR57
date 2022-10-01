@@ -512,7 +512,7 @@ SWEP.Attachments = {
             vmin = Vector(0, .13, 7),
             vmax = Vector(0, .13, 4.5),
         },
-		MergeSlots = {18},
+		MergeSlots = {11},
     },
     {
         PrintName = "Tactical",
@@ -600,7 +600,7 @@ SWEP.Attachments = {
         Slot = "uc_ubgl",
         Bone = "weapon",
         Offset = {
-            vpos = Vector(0, -0.4, 7.2),
+            vpos = Vector(0, -.9, 4),
             vang = Angle(90, 0, -90),
         },
         Hidden = true,
