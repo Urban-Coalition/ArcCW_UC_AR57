@@ -55,7 +55,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_uc_ar57.mdl"
 SWEP.WorldModel = "models/weapons/arccw/c_uc_ar57.mdl"
-SWEP.ViewModelFOV = 80
+SWEP.ViewModelFOV = 78
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage --
@@ -170,8 +170,8 @@ SWEP.IronSightStruct = {
 SWEP.ActivePos = Vector(-0.2, -1, 0.1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.CustomizePos = Vector(5, -2, -2)
-SWEP.CustomizeAng = Angle(15, 25, 0)
+SWEP.CustomizePos = Vector(0, 0, 0)
+SWEP.CustomizeAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-2.5, -2, -0.6)
 SWEP.CrouchAng = Angle(0, 0, -14)
@@ -339,10 +339,10 @@ SWEP.Animations = {
         MinProgress = 1.5,
         LastClip1OutTime = 0.9,
         LHIK = true,
-        LHIKIn = 0.2,
+        LHIKIn = 0.3,
         LHIKEaseIn = 0.2,
-        LHIKEaseOut = 0.4,
-        LHIKOut = 0.7,
+        LHIKEaseOut = 0.25,
+        LHIKOut = 0.6,
         SoundTable = {
             {s = rottle,  t = 0.0},
             {s = common .. "magpouch_gear.ogg", t = 0.2, v = 0.5},
@@ -365,10 +365,10 @@ SWEP.Animations = {
         MinProgress = 2,
         LastClip1OutTime = 0.7,
         LHIK = true,
-        LHIKIn = 0.2,
+        LHIKIn = 0.3,
         LHIKEaseIn = 0.2,
         LHIKEaseOut = 0.4,
-        LHIKOut = 0.9,
+        LHIKOut = 0.82,
         SoundTable = {
             {s = rottle,  t = 0.0},
             {s = ratel, t = 0.25},
@@ -393,8 +393,8 @@ SWEP.Animations = {
         Source = "inspect_enter",
         -- time = 35 / 60,
         LHIK = true,
-        LHIKIn = 0.3,
-        LHIKOut = 0,
+        LHIKIn = 0,
+        LHIKOut = 2.5,
         SoundTable = {
         },
     },
@@ -403,15 +403,15 @@ SWEP.Animations = {
         -- time = 72 / 60,
         LHIK = true,
         LHIKIn = 0,
-        LHIKOut = 0,
+        LHIKOut = 9999, -- maybe im dumb
     },
     ["exit_inspect"] = {
         Source = "inspect_exit",
         -- time = 66 / 60,
         LHIK = true,
-        LHIKIn = 0,
+        LHIKIn = 0.4,
         LHIKEaseOut = 0.3,
-        LHIKOut = 0.84,
+        LHIKOut = 0.6,
         SoundTable = {
             -- { s = rottle, t = 0 / 60, c = ca },
             -- { s = common .. "magrelease.ogg", t = 7 / 60, c = ca },
@@ -435,13 +435,10 @@ SWEP.Attachments = {
         Slot = {"optic","optic_sniper","ud_m16_rs"},
         Bone = "weapon",
         Offset = {
-            vpos = Vector(0, -1.75, 3),
+            vpos = Vector(0, -2.3, -2.2),
             vang = Angle(90, 0, -90),
         },
-        SlideAmount = {
-            vmin = Vector(0, -1.6, 3 - 2),
-            vmax = Vector(0, -1.6, 3 + 1),
-        },
+        
     },
     {
         PrintName = "Barrel",
@@ -508,14 +505,14 @@ SWEP.Attachments = {
         Slot = "foregrip",
         Bone = "weapon",
         Offset = {
-            vpos = Vector(0, 6, 11),
+            vpos = Vector(0, 6, 5),
             vang = Angle(90, 0, -90),
         },
         InstalledEles = {"rail_fg"},
         ExcludeFlags = {"m16_lmg", "m16_stub"},
         SlideAmount = {
-            vmin = Vector(0, .65, 11.5),
-            vmax = Vector(0, .65, 7.5),
+            vmin = Vector(0, .13, 7),
+            vmax = Vector(0, .13, 4.5),
         },
 		MergeSlots = {18},
     },
@@ -580,14 +577,14 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Front Sight",
-        Slot = {"ud_m16_fs", "ud_m16_charm"},
+        Slot = {"ud_m16_fs"},
         FreeSlot = true,
         Bone = "weapon",
         Offset = {
             vpos = Vector(0, -1.65, 16.75), -- 21.75 or 15.75
             vang = Angle(90, 0, -90),
         },
-        ExcludeFlags = {"sight_magpul"}
+        -- ExcludeFlags = {"sight_magpul"}
     },
     {
         PrintName = "Charm",
