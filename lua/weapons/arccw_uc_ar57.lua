@@ -162,7 +162,7 @@ SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
      Pos = Vector(-2.815, 0, 0.3),
-     Ang = Angle(0, 0, 4.9),
+     Ang = Angle(-1, -0.2, 4.9),
      Magnification = 1.1,
      SwitchToSound = "",
 }
@@ -253,7 +253,49 @@ SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
 SWEP.DefaultBodygroups = "00000000000000000000000"
 
 SWEP.AttachmentElements = {
+    ["uc_ar57_barrel_16"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 2},
+            {ind = 3, bg = 1},
+        },
+    },
 
+    ["stock_231_ex"] = {
+        VMBodygroups = {{ind = 0, bg = 1}},
+    },
+    ["stock_231_in"] = {
+        VMBodygroups = {{ind = 0, bg = 2}},
+    },
+    ["stock_231_tube"] = {
+        VMBodygroups = {{ind = 0, bg = 3}},
+    },
+    ["stock_607_ex"] = {
+        VMBodygroups = {{ind = 0, bg = 4}},
+    },
+    ["stock_607_in"] = {
+        VMBodygroups = {{ind = 0, bg = 5}},
+    },
+    ["stock_608"] = {
+        VMBodygroups = {{ind = 0, bg = 6}},
+    },
+    ["stock_carbine_ex"] = {
+        VMBodygroups = {{ind = 0, bg = 7}},
+    },
+    ["stock_carbine_in"] = {
+        VMBodygroups = {{ind = 0, bg = 8}},
+    },
+    ["stock_wood"] = {
+        VMBodygroups = {{ind = 0, bg = 9}},
+    },
+    ["stock_adar"] = {
+        VMBodygroups = {
+            {ind = 0, bg = 10},
+            {ind = 1, bg = 4}
+        },
+    },
+    ["stock_ru556"] = {
+        VMBodygroups = {{ind = 0, bg = 11}},
+    },
 }
 
 -- Animations --
@@ -430,7 +472,7 @@ SWEP.Attachments = {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         InstalledEles = {"upper_flat"},
-        Slot = {"optic","optic_sniper"},
+        Slot = {"optic","optic_sniper","ud_m16_rs"},
         Bone = "weapon",
         Offset = {
             vpos = Vector(0, -2.3, -2.2),
@@ -438,17 +480,17 @@ SWEP.Attachments = {
         },
         
     },
-    -- {
-    --     PrintName = "Barrel",
-    --     DefaultAttName = "20\" Standard Barrel",
-    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_barrel_20.png", "smooth mips"),
-    --     Slot = "ud_m16_blen",
-    --     Bone = "weapon",
-    --     Offset = {
-    --         vpos = Vector(2.8, -4.2, -11.5),
-    --         vang = Angle(90, 0, -90),
-    --     },
-    -- },
+    {
+        PrintName = "Barrel",
+        DefaultAttName = "14.5\" SBR Barrel",
+        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_barrel_20.png", "smooth mips"),
+        Slot = "uc_ar57_barrel",
+        Bone = "weapon",
+        Offset = {
+            vpos = Vector(2.8, -4.2, -11.5),
+            vang = Angle(90, 0, -90),
+        },
+    },
     -- {
     --     PrintName = "Handguard",
     --     DefaultAttName = "Ribbed Handguard",
@@ -525,27 +567,27 @@ SWEP.Attachments = {
         GivesFlags = {"tac"},
         --InstalledEles = {"ud_m16_clamp_fullsize"}
     },
-    -- {
-    --     PrintName = "Grip Type",
-    --     Slot = {"ud_m16_grip"},
-    --     DefaultAttName = "Standard Grip",
-    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_grip_default.png", "smooth mips"),
-    --     ExcludeFlags = {"m16_adar"}
-    -- },
-    -- {
-    --     PrintName = "Stock",
-    --     Slot = {"ud_m16_stock","go_stock"},
-    --     DefaultAttName = "Full Stock",
-    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_stock_default.png", "smooth mips"),
-    --     -- GSO support
-    --     InstalledEles = {"stock_231_tube"},
-    --     Bone = "weapon",
-    --     Offset = {
-    --         vpos = Vector(-0.02, 0, -3.25),
-    --         vang = Angle(90, 0, -90),
-    --     },
-    --     VMScale = Vector(1.16, 1.16, 1.16),
-    -- },
+    {
+        PrintName = "Grip Type",
+        Slot = {"ud_m16_grip"},
+        DefaultAttName = "Standard Grip",
+        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_grip_default.png", "smooth mips"),
+        ExcludeFlags = {"m16_adar"}
+    },
+    {
+        PrintName = "Stock",
+        Slot = {"ud_m16_stock","go_stock"},
+        DefaultAttName = "Full Stock",
+        DefaultAttIcon = Material("entities/att/acwatt_ud_m16_stock_default.png", "smooth mips"),
+        -- GSO support
+        InstalledEles = {"stock_231_tube"},
+        Bone = "weapon",
+        Offset = {
+            vpos = Vector(-0.02, 0, -3.25),
+            vang = Angle(90, 0, -90),
+        },
+        VMScale = Vector(1.16, 1.16, 1.16),
+    },
     -- {
     --     PrintName = "Magazine",
     --     Slot = {"ud_m16_mag"},
@@ -579,7 +621,7 @@ SWEP.Attachments = {
         FreeSlot = true,
         Bone = "weapon",
         Offset = {
-            vpos = Vector(0, -1.65, 16.75), -- 21.75 or 15.75
+            vpos = Vector(0, -2.3, 10.75), -- 21.75 or 15.75
             vang = Angle(90, 0, -90),
         },
         -- ExcludeFlags = {"sight_magpul"}
@@ -606,5 +648,10 @@ SWEP.Attachments = {
         Hidden = true,
         InstalledEles = {"rail_fg"},
         ExcludeFlags = {"m16_lmg", "m16_stub"},
+    },
+    {
+        PrintName = "Ironsight Flag",
+        Hidden = true,
+        DefaultFlags = {"ud_m16_rscompatible"}
     }
 }
