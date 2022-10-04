@@ -261,6 +261,10 @@ local rearSightStruct = {
 }
 
 SWEP.AttachmentElements = {
+    ["ar57_muzzle"] = {
+        VMBodygroups = {{ind = 3, bg = 1}},
+    },
+
     ["uc_ar57_barrel_16"] = {
         VMBodygroups = {
             {ind = 2, bg = 2},
@@ -554,10 +558,11 @@ SWEP.Attachments = {
         VMScale = Vector(1, 1, 1),
         WMScale = VMScale,
         Offset = {
-            vpos = Vector(0, -.33, 23.57),
+            vpos = Vector(0, -.65, 12.57),
             vang = Angle(90, 0, -90),
         },
         ExcludeFlags = {"sd", "m16_stub"},
+        InstalledEles = {"ar57_muzzle"}
     },
     -- {
     --     PrintName = "Upper Receiver",
