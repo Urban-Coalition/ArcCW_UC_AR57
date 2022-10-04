@@ -60,8 +60,8 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage --
 
-SWEP.Damage = ArcCW.UC.StdDmg["380acp"].max
-SWEP.DamageMin = ArcCW.UC.StdDmg["380acp"].min
+SWEP.Damage = 28 -- 4 shot close range kill (3 on chest)
+SWEP.DamageMin = 17 -- 7 shot long range kill
 SWEP.RangeMin = 50
 SWEP.Range = 100
 
@@ -188,44 +188,44 @@ SWEP.WorldModelOffset = {
 
 -- Firing sounds --
 
-local path = ")^weapons/arccw_ud/m16/"
-local path57 = ")^weapons/arccw_uc_ar57/"
+local path = ")^weapons/arccw_uc_ar57/"
+local path2 = ")^weapons/arccw_ud/m16/"
 local common = ")^/arccw_uc/common/"
 
 SWEP.ShootSound = {
-    path57 .. "fire-01.ogg",
-    path57 .. "fire-02.ogg",
-    path57 .. "fire-03.ogg",
-    path57 .. "fire-04.ogg",
-    path57 .. "fire-05.ogg",
-    path57 .. "fire-06.ogg"
+    path .. "fire-01.ogg",
+    path .. "fire-02.ogg",
+    path .. "fire-03.ogg",
+    path .. "fire-04.ogg",
+    path .. "fire-05.ogg",
+    path .. "fire-06.ogg"
 }
 SWEP.FirstShootSoundSilenced = {
-    path .. "fire-first-sup-01.ogg",
-    path .. "fire-first-sup-02.ogg",
-    path .. "fire-first-sup-03.ogg",
-    path .. "fire-first-sup-04.ogg",
-    path .. "fire-first-sup-05.ogg"
+    path2 .. "fire-first-sup-01.ogg",
+    path2 .. "fire-first-sup-02.ogg",
+    path2 .. "fire-first-sup-03.ogg",
+    path2 .. "fire-first-sup-04.ogg",
+    path2 .. "fire-first-sup-05.ogg"
 }
 SWEP.ShootSoundSilenced = {
-    path .. "fire-sup-01.ogg",
-    path .. "fire-sup-02.ogg",
-    path .. "fire-sup-03.ogg",
-    path .. "fire-sup-04.ogg",
-    path .. "fire-sup-05.ogg"
+    path2 .. "fire-sup-01.ogg",
+    path2 .. "fire-sup-02.ogg",
+    path2 .. "fire-sup-03.ogg",
+    path2 .. "fire-sup-04.ogg",
+    path2 .. "fire-sup-05.ogg"
 }
 
 SWEP.DistantShootSound = nil
 SWEP.DistantShootSoundSilenced = nil
-SWEP.ShootDrySound = path .. "dryfire.ogg"
+SWEP.ShootDrySound = path2 .. "dryfire.ogg"
 
 SWEP.DistantShootSoundOutdoors = {
-    path57 .. "fire-dist-01.ogg",
-    path57 .. "fire-dist-02.ogg",
-    path57 .. "fire-dist-03.ogg",
-    path57 .. "fire-dist-04.ogg",
-    path57 .. "fire-dist-05.ogg",
-    path57 .. "fire-dist-06.ogg"
+    path .. "fire-dist-01.ogg",
+    path .. "fire-dist-02.ogg",
+    path .. "fire-dist-03.ogg",
+    path .. "fire-dist-04.ogg",
+    path .. "fire-dist-05.ogg",
+    path .. "fire-dist-06.ogg"
 }
 SWEP.DistantShootSoundIndoors = {
     common .. "fire-dist-int-pistol-01.ogg",
@@ -362,9 +362,9 @@ SWEP.Animations = {
         SoundTable = {
             {s = common .. "raise.ogg", t = 0},
             {s = common .. "rattle.ogg", t = 0.2},
-            {s = path .. "chback.ogg",   t = 0.15},
+            {s = path .. "chback.ogg",   t = 0.55},
             {s = common .. "cloth_4.ogg",  t = 0.5},
-            {s = path .. "chamber.ogg",  t = 0.5},
+            {s = path .. "chforward.ogg",  t = 0.85},
         },
         ProcDraw = true,
     },
@@ -398,13 +398,7 @@ SWEP.Animations = {
         Source = "fire",
         Time = 15 / 37,
         ShellEjectAt = 0.01,
-        SoundTable = {{ s = {path57 .. "mech-01.ogg", path57 .. "mech-02.ogg", path57 .. "mech-03.ogg", path57 .. "mech-04.ogg", path57 .. "mech-05.ogg", path57 .. "mech-06.ogg"}, t = 0, v = 0.25 }},
-    },
-    ["fire_iron"] = {
-        Source = "fire",
-        Time = 15 / 37,
-        ShellEjectAt = 0.01,
-        SoundTable = {{ s = {path57 .. "mech-01.ogg", path57 .. "mech-02.ogg", path57 .. "mech-03.ogg", path57 .. "mech-04.ogg", path57 .. "mech-05.ogg", path57 .. "mech-06.ogg"}, t = 0 }},
+        SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0, v = 0.25 }},
     },
 
     ["fix"] = {
@@ -417,9 +411,10 @@ SWEP.Animations = {
         LHIKEaseOut = 0.15,
         LHIKOut = 0.4,
         SoundTable = {
-            {s = path .. "chback.ogg",   t = 0.15},
+            {s = rottle,  t = 0},
+            {s = path .. "chback.ogg",   t = 0.3},
             {s = common .. "cloth_4.ogg",  t = 0.5},
-            {s = path .. "chamber.ogg",  t = 0.5},
+            {s = path .. "chforward.ogg",  t = 0.55},
         },
     },
 
@@ -438,15 +433,15 @@ SWEP.Animations = {
         LHIKOut = 0.6,
         SoundTable = {
             {s = rottle,  t = 0.0},
-            {s = path57 .. "magrel.ogg", 	 t = 0.17},
+            {s = path .. "magrel.ogg", 	 t = 0.17},
             {s = ratel, t = 0.25},
-            {s = path57 .. "magout.ogg", 	 t = 0.5},
+            {s = path .. "magout.ogg", 	 t = 0.5},
             {s = ratel, t = 0.6},
             {s = common .. "magpouch_gear.ogg", t = 0.65, v = 0.5},
             {s = ratel, t = 1.1},
             {s = rottle,  t = 1.15},
-            {s = path57 .. "struggle.ogg",    t = 1.9, v = 1.0},
-            {s = path57 .. "magin.ogg",    t = 2.2, v = 1.0},
+            {s = path .. "struggle.ogg",    t = 1.9, v = 1.0},
+            {s = path .. "magin.ogg",    t = 2.2, v = 1.0},
             {s = common .. "grab-polymer.ogg", t = 2.75, v = 0.25},
             {s = common .. "rattle_b2i_rifle.ogg", t = 2.775},
             {s = common .. "shoulder.ogg", t = 2.85},
@@ -465,20 +460,22 @@ SWEP.Animations = {
         LHIKOut = 0.82,
         SoundTable = {
             {s = rottle,  t = 0.0},
+            {s = path .. "magrel.ogg", 	 t = 0.17},
             {s = ratel, t = 0.25},
-            {s = common .. "magpouch_gear.ogg", t = 0.1, v = 0.5},
-            {s = path .. "magout_empty.ogg", 	 t = 0.2},
-            {s = ratel, t = 0.5},
-            {s = common .. "rifle_magdrop.ogg",  t = 0.65},
-            {s = path .. "struggle.ogg",    t = 0.95, v = 0.4},
-            {s = path .. "magin.ogg",    t = 0.95},
+            {s = path .. "magout.ogg", 	 t = 0.5},
+            {s = ratel, t = 0.6},
+            {s = common .. "magpouch_gear.ogg", t = 0.65, v = 0.5},
             {s = ratel, t = 1.1},
-            {s = rottle,  t = 1.39},
-            {s = path .. "boltdrop.ogg", t = 1.7},
-            {s = ratel, t = 1.9},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 2.0},
-            {s = common .. "grab-polymer.ogg", t = 2.1, v = 0.35},
-            {s = common .. "shoulder.ogg", t = 2.1},
+            {s = rottle,  t = 1.15},
+            {s = {common .. "rifle_magdrop.ogg",common .. "rifle_magdrop_1.ogg",common .. "rifle_magdrop._2ogg",common .. "rifle_magdrop_3.ogg",common .. "rifle_magdrop_4.ogg",}, t = 1.4, v = 0.5},
+            {s = path .. "struggle.ogg",    t = 1.9, v = 1.0},
+            {s = path .. "magin.ogg",    t = 2.2, v = 1.0},
+            {s = common .. "grab-polymer.ogg", t = 2.75, v = 0.25},
+            {s = path .. "chback.ogg",   t = 2.775},
+            {s = common .. "cloth_4.ogg",  t = 2.775},
+            {s = path .. "chforward.ogg",  t = 3},
+            {s = common .. "rattle_b2i_rifle.ogg", t = 3.25},
+            {s = common .. "shoulder.ogg", t = 3.45},
         },
     },
 
@@ -525,14 +522,14 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        InstalledEles = {"upper_flat"},
+        --InstalledEles = {"upper_flat"},
         Slot = {"optic","optic_sniper","ud_m16_rs"},
         Bone = "weapon",
         Offset = {
             vpos = Vector(0, -2.3, -2.2),
             vang = Angle(90, 0, -90),
         },
-        Installed = "ud_m16_rs_3d",
+        Installed = "ud_m16_rs",
     },
     {
         PrintName = "Barrel",
@@ -540,10 +537,6 @@ SWEP.Attachments = {
         DefaultAttIcon = Material("entities/att/acwatt_ud_m16_barrel_20.png", "smooth mips"),
         Slot = "uc_ar57_barrel",
         Bone = "weapon",
-        Offset = {
-            vpos = Vector(2.8, -4.2, -11.5),
-            vang = Angle(90, 0, -90),
-        },
     },
     -- {
     --     PrintName = "Handguard",
@@ -568,8 +561,7 @@ SWEP.Attachments = {
             vpos = Vector(0, -.65, 12.57),
             vang = Angle(90, 0, -90),
         },
-        ExcludeFlags = {"sd", "m16_stub"},
-        InstalledEles = {"ar57_muzzle"}
+        InstalledEles = {"ar57_muzzle"},
     },
     -- {
     --     PrintName = "Upper Receiver",
@@ -681,7 +673,7 @@ SWEP.Attachments = {
         },
         -- ExcludeFlags = {"sight_magpul"}
         InstalledEles = {"ar57_fs"},
-        Installed = "ud_m16_fs_3d",
+        Installed = "ud_m16_fs_sig",
     },
     {
         PrintName = "Charm",
