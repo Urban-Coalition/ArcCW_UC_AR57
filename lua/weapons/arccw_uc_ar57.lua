@@ -189,15 +189,16 @@ SWEP.WorldModelOffset = {
 -- Firing sounds --
 
 local path = ")^weapons/arccw_ud/m16/"
+local path57 = ")^weapons/arccw_uc_ar57/"
 local common = ")^/arccw_uc/common/"
 
 SWEP.ShootSound = {
-    path .. "fire-01.ogg",
-    path .. "fire-02.ogg",
-    path .. "fire-03.ogg",
-    path .. "fire-04.ogg",
-    path .. "fire-05.ogg",
-    path .. "fire-06.ogg"
+    path57 .. "fire-01.ogg",
+    path57 .. "fire-02.ogg",
+    path57 .. "fire-03.ogg",
+    path57 .. "fire-04.ogg",
+    path57 .. "fire-05.ogg",
+    path57 .. "fire-06.ogg"
 }
 SWEP.FirstShootSoundSilenced = {
     path .. "fire-first-sup-01.ogg",
@@ -219,20 +220,20 @@ SWEP.DistantShootSoundSilenced = nil
 SWEP.ShootDrySound = path .. "dryfire.ogg"
 
 SWEP.DistantShootSoundOutdoors = {
-    path .. "fire-dist-01.ogg",
-    path .. "fire-dist-02.ogg",
-    path .. "fire-dist-03.ogg",
-    path .. "fire-dist-04.ogg",
-    path .. "fire-dist-05.ogg",
-    path .. "fire-dist-06.ogg"
+    path57 .. "fire-dist-01.ogg",
+    path57 .. "fire-dist-02.ogg",
+    path57 .. "fire-dist-03.ogg",
+    path57 .. "fire-dist-04.ogg",
+    path57 .. "fire-dist-05.ogg",
+    path57 .. "fire-dist-06.ogg"
 }
 SWEP.DistantShootSoundIndoors = {
-    common .. "fire-dist-int-rifle-01.ogg",
-    common .. "fire-dist-int-rifle-02.ogg",
-    common .. "fire-dist-int-rifle-03.ogg",
-    common .. "fire-dist-int-rifle-04.ogg",
-    common .. "fire-dist-int-rifle-05.ogg",
-    common .. "fire-dist-int-rifle-06.ogg"
+    common .. "fire-dist-int-pistol-01.ogg",
+    common .. "fire-dist-int-pistol-02.ogg",
+    common .. "fire-dist-int-pistol-03.ogg",
+    common .. "fire-dist-int-pistol-04.ogg",
+    common .. "fire-dist-int-pistol-05.ogg",
+    common .. "fire-dist-int-pistol-06.ogg"
 }
 SWEP.DistantShootSoundOutdoorsSilenced = {
     common .. "sup_tail.ogg"
@@ -361,7 +362,7 @@ SWEP.Animations = {
         Source = "fire",
         Time = 15 / 37,
         ShellEjectAt = 0.01,
-        SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0 }},
+        SoundTable = {{ s = {path57 .. "mech-01.ogg", path57 .. "mech-02.ogg", path57 .. "mech-03.ogg", path57 .. "mech-04.ogg", path57 .. "mech-05.ogg", path57 .. "mech-06.ogg"}, t = 0 }},
     },
 
     ["fix"] = {
