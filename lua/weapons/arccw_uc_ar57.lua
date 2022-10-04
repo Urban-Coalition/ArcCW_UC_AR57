@@ -161,10 +161,10 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-2.815, 0, 0.3),
-     Ang = Angle(-1, -0.2, 4.9),
-     Magnification = 1.1,
-     SwitchToSound = "",
+    Pos = Vector(-2.815, 0, 0.9),
+    Ang = Angle(-0.15, 0.15, 4.9),
+    Magnification = 1.1,
+    SwitchToSound = "",
 }
 
 SWEP.ActivePos = Vector(-0.2, -1, 0.1)
@@ -253,10 +253,23 @@ SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
 
 SWEP.DefaultBodygroups = "00000000000000000000000"
 
+local rearSightStruct = {
+    Pos = Vector(-2.68, 0, -.55),
+    Ang = Angle(1.15, 0.15, 4.9),
+    Magnification = 1.1,
+    SwitchToSound = "",
+}
+
 SWEP.AttachmentElements = {
     ["uc_ar57_barrel_16"] = {
         VMBodygroups = {
             {ind = 2, bg = 2},
+            {ind = 3, bg = 1},
+        },
+    },
+    ["uc_ar57_barrel_sd"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 3},
             {ind = 3, bg = 1},
         },
     },
@@ -306,6 +319,25 @@ SWEP.AttachmentElements = {
     },
     ["grip_wood"] = {
         VMBodygroups = {{ind = 1, bg = 3}},
+    },
+
+    -- Rear sight fixes
+    ["ud_m16_upper_flat"] = {
+        Override_IronSightStruct = rearSightStruct,
+        Override_IronSightStruct_Priority = 2,
+    },
+    ["ud_m16_rs_3d"] = {
+        Override_IronSightStruct = {
+            Pos = Vector(-2.815, 0, 0.75),
+            Ang = Angle(0.15, 0, 4.9),
+            Magnification = 1.1,
+            SwitchToSound = "",
+        },
+        Override_IronSightStruct_Priority = 3,
+    },
+    ["ar57_fs"] = {
+        Override_IronSightStruct = rearSightStruct,
+        Override_IronSightStruct_Priority = 2,
     },
 }
 
@@ -489,7 +521,7 @@ SWEP.Attachments = {
             vpos = Vector(0, -2.3, -2.2),
             vang = Angle(90, 0, -90),
         },
-        
+        Installed = "ud_m16_rs_3d",
     },
     {
         PrintName = "Barrel",
@@ -636,6 +668,8 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
         -- ExcludeFlags = {"sight_magpul"}
+        InstalledEles = {"ar57_fs"},
+        Installed = "ud_m16_fs_3d",
     },
     {
         PrintName = "Charm",
