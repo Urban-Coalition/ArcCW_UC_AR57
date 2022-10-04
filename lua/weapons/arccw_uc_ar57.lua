@@ -60,8 +60,8 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage --
 
-SWEP.Damage = ArcCW.UC.StdDmg["380acp"].max
-SWEP.DamageMin = ArcCW.UC.StdDmg["380acp"].min
+SWEP.Damage = 28 -- 4 shot close range kill (3 on chest)
+SWEP.DamageMin = 17 -- 7 shot long range kill
 SWEP.RangeMin = 50
 SWEP.Range = 100
 
@@ -522,7 +522,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        InstalledEles = {"upper_flat"},
+        --InstalledEles = {"upper_flat"},
         Slot = {"optic","optic_sniper","ud_m16_rs"},
         Bone = "weapon",
         Offset = {
@@ -537,10 +537,6 @@ SWEP.Attachments = {
         DefaultAttIcon = Material("entities/att/acwatt_ud_m16_barrel_20.png", "smooth mips"),
         Slot = "uc_ar57_barrel",
         Bone = "weapon",
-        Offset = {
-            vpos = Vector(2.8, -4.2, -11.5),
-            vang = Angle(90, 0, -90),
-        },
     },
     -- {
     --     PrintName = "Handguard",
@@ -565,8 +561,7 @@ SWEP.Attachments = {
             vpos = Vector(0, -.65, 12.57),
             vang = Angle(90, 0, -90),
         },
-        ExcludeFlags = {"sd", "m16_stub"},
-        InstalledEles = {"ar57_muzzle"}
+        InstalledEles = {"ar57_muzzle"},
     },
     -- {
     --     PrintName = "Upper Receiver",
