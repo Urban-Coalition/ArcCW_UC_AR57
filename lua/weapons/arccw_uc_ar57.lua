@@ -266,7 +266,7 @@ SWEP.AttachmentElements = {
     },
 
     ["uc_ar57_barrel_16"] = {
-        VMBodygroups = { 
+        VMBodygroups = {
             {ind = 2, bg = 2},
             {ind = 3, bg = 1},
         },
@@ -602,7 +602,7 @@ SWEP.Attachments = {
             vmin = Vector(0, .13, 7),
             vmax = Vector(0, .13, 4.5),
         },
-		MergeSlots = {11},
+		MergeSlots = {14},
     },
     {
         PrintName = "Tactical",
