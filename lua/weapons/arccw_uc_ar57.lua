@@ -522,7 +522,7 @@ SWEP.Attachments = {
         Slot = {"optic","optic_sniper","ud_m16_rs"},
         Bone = "weapon",
         Offset = {
-            vpos = Vector(0, -2.3, -2.8),
+            vpos = Vector(0, -2.3, -2.2),
             vang = Angle(90, 0, -90),
         },
         Installed = "ud_m16_rs_3d",
