@@ -23,7 +23,7 @@ SWEP.TracerWidth = 2
 
 -- Fake name --
 
-SWEP.PrintName = "RAYCAR-0"
+SWEP.PrintName = "RAY-EPDW"
 -- AMCAR stands for (american) Colt Assault Rifle, not Carbine!! ~Fesiug
 -- shut up retard ~zenith
 
@@ -33,7 +33,7 @@ SWEP.TrueName = "AR-57"
 
 -- Trivia --
 SWEP.Trivia_Class = "Personal Defense Weapon"
-SWEP.Trivia_Desc = "Esoteric personal defense weapon that mounts to an AR-15 lower receiver. It feeds from P90 magazines attached in place of an actual AR's gas tube, ejecting casings through what would normally be a magwell.\n\nCursed? Blursed? You decide."
+SWEP.Trivia_Desc = "Esoteric personal defense weapon that mounts to an AR-15 lower receiver. It feeds from P90 magazines attached in parallel above the barrel, ejecting casings through what would normally be a magwell.\n\nCursed? Blursed? You decide."
 SWEP.Trivia_Manufacturer = "Rayter Arms Industries"
 SWEP.Trivia_Calibre = "5.7x28mm FN"
 SWEP.Trivia_Mechanism = "Blowback"
