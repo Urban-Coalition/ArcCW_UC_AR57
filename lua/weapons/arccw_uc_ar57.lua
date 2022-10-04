@@ -266,7 +266,7 @@ SWEP.AttachmentElements = {
     },
 
     ["uc_ar57_barrel_16"] = {
-        VMBodygroups = {
+        VMBodygroups = { 
             {ind = 2, bg = 2},
             {ind = 3, bg = 1},
         },
