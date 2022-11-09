@@ -262,48 +262,48 @@ local rearSightStruct = {
 
 SWEP.AttachmentElements = {
     ["ar57_muzzle"] = {
-        VMBodygroups = {{ind = 3, bg = 1}},
+        VMBodygroups = {{ind = 7, bg = 1}},
     },
 
     ["uc_ar57_barrel_16"] = {
         VMBodygroups = {
-            {ind = 2, bg = 2},
-            {ind = 3, bg = 1},
+            {ind = 6, bg = 1},
+            {ind = 7, bg = 2},
         },
     },
     ["uc_ar57_barrel_sd"] = {
         VMBodygroups = {
-            {ind = 2, bg = 3},
-            {ind = 3, bg = 1},
+            {ind = 6, bg = 2},
+            {ind = 7, bg = 1},
         },
     },
 
     ["stock_231_ex"] = {
-        VMBodygroups = {{ind = 0, bg = 1}},
+        VMBodygroups = {{ind = 4, bg = 1}},
     },
     ["stock_231_in"] = {
-        VMBodygroups = {{ind = 0, bg = 2}},
+        VMBodygroups = {{ind = 4, bg = 2}},
     },
     ["stock_231_tube"] = {
-        VMBodygroups = {{ind = 0, bg = 3}},
+        VMBodygroups = {{ind = 4, bg = 3}},
     },
     ["stock_607_ex"] = {
-        VMBodygroups = {{ind = 0, bg = 4}},
+        VMBodygroups = {{ind = 4, bg = 4}},
     },
     ["stock_607_in"] = {
-        VMBodygroups = {{ind = 0, bg = 5}},
+        VMBodygroups = {{ind = 4, bg = 5}},
     },
     ["stock_608"] = {
-        VMBodygroups = {{ind = 0, bg = 6}},
+        VMBodygroups = {{ind = 4, bg = 6}},
     },
     ["stock_carbine_ex"] = {
-        VMBodygroups = {{ind = 0, bg = 7}},
+        VMBodygroups = {{ind = 4, bg = 7}},
     },
     ["stock_carbine_in"] = {
-        VMBodygroups = {{ind = 0, bg = 8}},
+        VMBodygroups = {{ind = 4, bg = 8}},
     },
     ["stock_wood"] = {
-        VMBodygroups = {{ind = 0, bg = 9}},
+        VMBodygroups = {{ind = 4, bg = 9}},
     },
     ["stock_adar"] = {
         VMBodygroups = {
@@ -316,13 +316,13 @@ SWEP.AttachmentElements = {
     },
 
     ["grip_ergo"] = {
-        VMBodygroups = {{ind = 1, bg = 1}},
+        VMBodygroups = {{ind = 5, bg = 1}},
     },
     ["grip_skel"] = {
-        VMBodygroups = {{ind = 1, bg = 2}},
+        VMBodygroups = {{ind = 5, bg = 2}},
     },
     ["grip_wood"] = {
-        VMBodygroups = {{ind = 1, bg = 3}},
+        VMBodygroups = {{ind = 5, bg = 3}},
     },
 
     -- Rear sight fixes
