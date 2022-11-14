@@ -28,10 +28,9 @@ att.Mult_SightTime = 1.2
 att.Mult_ShootVol = 0.65
 att.Silencer = true
 att.Override_MuzzleEffect = "muzzleflash_suppressed"
-att.GivesFlags = {"sd", "ud_m16_rscompatible", "ud_m16_sd"}
 att.SDBarrel = true
 
-att.ActivateElements = {"hg_sd"}
+att.ActivateElements = {"ar57_muzzle"}
 
 att.Override_Jamming = true
 att.Override_HeatLockout = false
