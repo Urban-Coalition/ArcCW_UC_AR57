@@ -278,6 +278,12 @@ SWEP.AttachmentElements = {
             {ind = 6, bg = 1},
             {ind = 7, bg = 2},
         },
+        AttPosMods = {
+            [3] = {
+                vpos = Vector(0, -.65, 17.57),
+                vang = Angle(90, 0, -90),
+            }
+        }
     },
     ["uc_ar57_barrel_sd"] = {
         VMBodygroups = {
@@ -573,6 +579,7 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
         InstalledEles = {"ar57_muzzle"},
+        ExcludeFlags = {"ar57_sd"},
     },
     -- {
     --     PrintName = "Upper Receiver",
