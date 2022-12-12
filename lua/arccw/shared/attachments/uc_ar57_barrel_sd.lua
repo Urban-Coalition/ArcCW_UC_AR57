@@ -31,6 +31,7 @@ att.Override_MuzzleEffect = "muzzleflash_suppressed"
 att.SDBarrel = true
 
 att.ActivateElements = {"ar57_muzzle"}
+att.GivesFlags = {"ar57_sd"}
 
 att.Override_Jamming = true
 att.Override_HeatLockout = false
