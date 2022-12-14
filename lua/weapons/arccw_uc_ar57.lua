@@ -200,19 +200,13 @@ SWEP.ShootSound = {
     path .. "fire-05.ogg",
     path .. "fire-06.ogg"
 }
-SWEP.FirstShootSoundSilenced = {
-    path2 .. "fire-first-sup-01.ogg",
-    path2 .. "fire-first-sup-02.ogg",
-    path2 .. "fire-first-sup-03.ogg",
-    path2 .. "fire-first-sup-04.ogg",
-    path2 .. "fire-first-sup-05.ogg"
-}
 SWEP.ShootSoundSilenced = {
-    path2 .. "fire-sup-01.ogg",
-    path2 .. "fire-sup-02.ogg",
-    path2 .. "fire-sup-03.ogg",
-    path2 .. "fire-sup-04.ogg",
-    path2 .. "fire-sup-05.ogg"
+    path .. "fire-sup-01.ogg",
+    path .. "fire-sup-02.ogg",
+    path .. "fire-sup-03.ogg",
+    path .. "fire-sup-04.ogg",
+    path .. "fire-sup-05.ogg",
+    path .. "fire-sup-06.ogg"
 }
 
 SWEP.DistantShootSound = nil
@@ -236,10 +230,24 @@ SWEP.DistantShootSoundIndoors = {
     common .. "fire-dist-int-pistol-06.ogg"
 }
 SWEP.DistantShootSoundOutdoorsSilenced = {
-    common .. "sup_tail.ogg"
+    common .. "sup-tail-01.ogg",
+    common .. "sup-tail-02.ogg",
+    common .. "sup-tail-03.ogg",
+    common .. "sup-tail-04.ogg",
+    common .. "sup-tail-05.ogg",
+    common .. "sup-tail-06.ogg",
+    common .. "sup-tail-07.ogg",
+    common .. "sup-tail-08.ogg",
+    common .. "sup-tail-09.ogg",
+    common .. "sup-tail-10.ogg"
 }
 SWEP.DistantShootSoundIndoorsSilenced = {
-    common .. "sup_tail.ogg"
+    common .. "fire-dist-int-pistol-light-01.ogg",
+    common .. "fire-dist-int-pistol-light-02.ogg",
+    common .. "fire-dist-int-pistol-light-03.ogg",
+    common .. "fire-dist-int-pistol-light-04.ogg",
+    common .. "fire-dist-int-pistol-light-05.ogg",
+    common .. "fire-dist-int-pistol-light-06.ogg"
 }
 SWEP.DistantShootSoundOutdoorsVolume = 1
 SWEP.DistantShootSoundIndoorsVolume = 1
@@ -270,6 +278,12 @@ SWEP.AttachmentElements = {
             {ind = 6, bg = 1},
             {ind = 7, bg = 2},
         },
+        AttPosMods = {
+            [3] = {
+                vpos = Vector(0, -.65, 17.57),
+                vang = Angle(90, 0, -90),
+            }
+        }
     },
     ["uc_ar57_barrel_sd"] = {
         VMBodygroups = {
@@ -399,6 +413,12 @@ SWEP.Animations = {
         Time = 15 / 37,
         ShellEjectAt = 0.01,
         SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0, v = 0.25 }},
+    },
+    ["fire_iron"] = {
+        Source = "fire",
+        Time = 15 / 37,
+        ShellEjectAt = 0.01,
+        SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0, }},
     },
 
     ["fix"] = {
@@ -559,6 +579,7 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
         InstalledEles = {"ar57_muzzle"},
+        ExcludeFlags = {"ar57_sd"},
     },
     -- {
     --     PrintName = "Upper Receiver",
