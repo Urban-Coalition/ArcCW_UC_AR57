@@ -60,12 +60,12 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage --
 
-SWEP.Damage = 28 -- 4 shot close range kill (3 on chest)
-SWEP.DamageMin = 17 -- 7 shot long range kill
-SWEP.RangeMin = 50
-SWEP.Range = 100
+SWEP.Damage = ArcCW.UC.StdDmg["57fn"].max -- 4 shot close range kill (3 on chest)
+SWEP.DamageMin = ArcCW.UC.StdDmg["57fn"].min -- 7 shot long range kill
+SWEP.RangeMin = 100
+SWEP.Range = 400
 
-SWEP.Penetration = ArcCW.UC.StdDmg["556"].pen
+SWEP.Penetration = ArcCW.UC.StdDmg["57fn"].pen
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil
 SWEP.MuzzleVelocity = 715
@@ -276,7 +276,7 @@ SWEP.AttachmentElements = {
     ["uc_ar57_barrel_16"] = {
         VMBodygroups = {
             {ind = 6, bg = 1},
-            {ind = 7, bg = 2},
+            {ind = 7, bg = 1},
         },
         AttPosMods = {
             [3] = {
@@ -385,7 +385,7 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    
+
     ["draw"] = {
         Source = "draw",
         SoundTable = {
@@ -394,7 +394,7 @@ SWEP.Animations = {
             {s = ratel, t = 0.2},
         },
     },
-    
+
     ["holster"] = {
         Source = "holster",
         LHIK = true,
@@ -407,7 +407,7 @@ SWEP.Animations = {
             {s = common .. "cloth_6.ogg", t = 0.2},
         },
     },
-    
+
     ["fire"] = {
         Source = "fire",
         Time = 15 / 37,
@@ -555,18 +555,6 @@ SWEP.Attachments = {
         Slot = "uc_ar57_barrel",
         Bone = "weapon",
     },
-    -- {
-    --     PrintName = "Handguard",
-    --     DefaultAttName = "Ribbed Handguard",
-    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_hg_ribbed.png", "smooth mips"),
-    --     Slot = "ud_m16_hg",
-    --     Bone = "weapon",
-    --     Offset = {
-    --         vpos = Vector(0, -1.63, -0.41),
-    --         vang = Angle(90, 0, -90),
-    --     },
-    --     ExcludeFlags = {"sd"}
-    -- },
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
@@ -581,30 +569,6 @@ SWEP.Attachments = {
         InstalledEles = {"ar57_muzzle"},
         ExcludeFlags = {"ar57_sd"},
     },
-    -- {
-    --     PrintName = "Upper Receiver",
-    --     DefaultAttName = "5.56x45mm Upper",
-    --     DefaultAttIcon = Material("entities/att/uc_bullets/556x45.png", "smooth mips"),
-    --     Slot = {"ud_m16_receiver"},
-    --     Bone = "weapon",
-    --     Offset = {
-    --         vpos = Vector(2.8, -4.2, -11.5),
-    --         vang = Angle(90, 0, -90),
-    --     },
-    --     ExcludeFlags = {"ud_m16_fpw"}
-    -- },
-    -- {
-    --     PrintName = "Lower Receiver",
-    --     DefaultAttName = "Burst Lower",
-    --     DefaultAttIcon = Material("entities/att/acwatt_ud_m16_receiver_default.png", "smooth mips"),
-    --     Slot = {"ud_m16_fcg"},
-    --     Bone = "weapon",
-    --     Offset = {
-    --         vpos = Vector(2.8, -4.2, -11.5),
-    --         vang = Angle(90, 0, -90),
-    --     },
-    --     ExcludeFlags = {"m16_nolower"}
-    -- },
     {
         PrintName = "Underbarrel",
         Slot = "foregrip",
@@ -619,7 +583,7 @@ SWEP.Attachments = {
             vmin = Vector(0, .13, 7),
             vmax = Vector(0, .13, 4.5),
         },
-		MergeSlots = {14},
+        MergeSlots = {14},
     },
     {
         PrintName = "Tactical",
