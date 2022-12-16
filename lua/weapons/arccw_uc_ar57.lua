@@ -143,7 +143,7 @@ SWEP.MalfunctionTakeRound = false
 
 SWEP.SpeedMult = 0.925
 SWEP.SightedSpeedMult = 0.75
-SWEP.SightTime = 0.5
+SWEP.SightTime = 0.45
 SWEP.ShootSpeedMult = 0.9
 
 -- Length --
@@ -321,12 +321,12 @@ SWEP.AttachmentElements = {
     },
     ["stock_adar"] = {
         VMBodygroups = {
-            {ind = 0, bg = 10},
-            {ind = 1, bg = 4}
+            {ind = 4, bg = 10},
+            {ind = 5, bg = 4}
         },
     },
     ["stock_ru556"] = {
-        VMBodygroups = {{ind = 0, bg = 11}},
+        VMBodygroups = {{ind = 4, bg = 11}},
     },
 
     ["grip_ergo"] = {
