@@ -626,8 +626,8 @@ SWEP.Attachments = {
         Slot = {"tac"},
         Bone = "weapon",
         Offset = {
-            vpos = Vector(0, 0.3, 21.25),
-            vang = Angle(90, 0, -90),
+            vpos = Vector(1.0, -0.65, 9),
+            vang = Angle(90, 0, 0),
         },
         GivesFlags = {"tac"},
         --InstalledEles = {"ud_m16_clamp_fullsize"}
