@@ -673,7 +673,7 @@ SWEP.Attachments = {
         Slot = "uc_ubgl",
         Bone = "weapon",
         Offset = {
-            vpos = Vector(0, -.9, 4),
+            vpos = Vector(0, -.9, 3.6),
             vang = Angle(90, 0, -90),
         },
         Hidden = true,
