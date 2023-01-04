@@ -424,12 +424,7 @@ SWEP.Animations = {
     ["fix"] = {
         Source = "fix",
         Time = 45 / 30,
-        ShellEjectAt = false,
-        LHIK = true,
-        LHIKIn = 0.3,
-        LHIKEaseIn = 0.4,
-        LHIKEaseOut = 0.15,
-        LHIKOut = 0.4,
+        ShellEjectAt = 0.7,
         SoundTable = {
             {s = rottle,  t = 0},
             {s = path .. "chback.ogg",   t = 0.3},
