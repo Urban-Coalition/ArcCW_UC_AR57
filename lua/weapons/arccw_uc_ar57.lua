@@ -418,7 +418,10 @@ SWEP.Animations = {
         Source = "fire",
         Time = 15 / 37,
         ShellEjectAt = 0.01,
-        SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0, }},
+        SoundTable = {
+            {s = common .. "common_mech_light.ogg", t = 0},
+            { s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0 }
+        },
     },
 
     ["fix"] = {
