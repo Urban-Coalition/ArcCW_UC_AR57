@@ -253,6 +253,15 @@ SWEP.DistantShootSoundOutdoorsVolume = 1
 SWEP.DistantShootSoundIndoorsVolume = 1
 SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
 
+SWEP.FiremodeSound = {
+    path2 .. "selector-01.ogg",
+    path2 .. "selector-02.ogg",
+    path2 .. "selector-03.ogg",
+    path2 .. "selector-04.ogg",
+    path2 .. "selector-05.ogg",
+    path2 .. "selector-06.ogg",
+}
+
 -- Bodygroups --
 
 -- SWEP.BulletBones = {
